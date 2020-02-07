@@ -1,5 +1,7 @@
 package com.mindera.school;
 
+import com.sun.source.tree.WhileLoopTree;
+
 import java.util.List;
 
 /**
@@ -18,12 +20,25 @@ public class FibonacciCalculator {
      * eg: 0,1,1,2,3,5,8,13,21,34,55,89,144
      */
     public String fibonacciSequence(final Integer n) {
-        return "";
+            int nr1= 0;
+            int nr2 = 1;
+            int soma;
+            String seq = nr1 + "," + nr2;
+            for (int i = 0; i < n; i++){
+                 soma = nr1 + nr2;
+                nr1 = nr2;
+                nr2 = soma;
+                seq += "," + soma;
+            }
+            return seq;
     }
 
-    /**
-     * Calculates n entries of the fibonacci sequence for each entry in the list
-     */
+
+
+
+
+
+
     public List<String> sequences(List<Integer> entries) {
         // TODO you should use threads for this
         return List.of("");
